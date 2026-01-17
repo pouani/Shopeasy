@@ -48,3 +48,29 @@ server:
   servlet:
     context-path: /api/v1
   port: 8080
+
+
+# OpenAPI Configuration
+shopeasy:
+  openapi:
+    dev-url: http://localhost:8080
+    prod-url: https://api.shopeasy.com
+
+# SpringDoc Configuration
+springdoc:
+  api-docs:
+    path: /api-docs
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    try-it-out-enabled: true
+    filter: true
+
+  packages-to-scan: com.shopeasy.shopeasy.controller
+  paths-to-match: /api/v1/**
+  paths-to-exclude: /actuator/**
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
